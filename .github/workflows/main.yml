@@ -9,3 +9,10 @@ jobs:
     - uses: oven-sh/setup-bun@v2
     - run: bun install
     - run: bun run build
+    - run: date > generated.txt
+          # Note: the following account information will not work on GHES
+    - run: git config user.name "github-actions[bot]"
+    - run: git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+    - run: git add .
+    - run: git commit -m "generated"
+    - run: git push
