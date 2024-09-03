@@ -1,101 +1,51 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import loaderEyes from "/pedal_bike_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg?raw"; 
-import localBirdImage from '../src/assets/pedal_bike_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg';
+import Layout from '~/layouts/PageLayout.astro';
 
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Stats from '~/components/widgets/Stats.astro';
+
+const metadata = {
+  title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
+  ignoreTitleTemplate: true,
+};
 ---
 
-<Layout title="Syracuse Cyclist Union!" description="A lobbying organization for better cycling in Syracuse, NY.">
-	<main>
-<!-- ICON FROM https://fonts.google.com/icons?icon.size=24&icon.color=%235f6368&selected=Material+Symbols+Outlined:pedal_bike:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=bicycle -->
-				<linearGradient
-					id="paint0_linear_1805_24383"
-					x1="247.358"
-					y1="0"
-					x2="247.358"
-					y2="622.479"
-					gradientUnits="userSpaceOnUse"
-				>
-					<stop stop-opacity="0.9"></stop>
-					<stop offset="1" stop-opacity="0.2"></stop>
-				</linearGradient>
-			</defs>
-		</svg>
-		<h1> <span class="text-gradient">Syracuse Cyclist Union</span></h1>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://bit.ly/SyracuseBikeSurveySite"
-				title="Survey"
-				body="Survey: Do you feel safe riding your bike in Syracuse?"
-				target="_blank"
-			/>
-		</ul>
-	</main>
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+  <Hero
+    tagline="Do you feel safe biking in Syracuse?"
+    title="Take our 2024 State of Syracuse Cycling Demographic survey"
+    subtitle="Your voice matters."
+    actions={[
+      { variant: 'primary', text: 'Take the survey!', href: '/StateOfCyclingSurvey24', icon: 'tabler:square-rounded-arrow-right' },
+    ]}
+
+  />
+
+<Note body="It should not be a life or death situation to bike" />
+
+
+
+  <!-- FAQs Widget ******************* -->
+  <Hero
+    title="Where does Syracuse rank?"
+    subtitle="Data fromPeople For Bikes' 2024 City Ranking"
+    actions={[
+      { variant: 'secondary', text: "People For Bikes' City Ranking", href: '    https://cityratings.peopleforbikes.org/cities/syracuse-ny', icon: 'tabler:square-rounded-arrow-right' },
+    ]}
+  />
+  <Stats
+    stats={[
+      { title: 'City rank', amount: '10 / 100' },
+      { title: 'Overall city rank', amount: "2203 / 2579" },
+      { title: 'Rank in USA', amount: '1964 / 2300' },
+      { title: 'Rank in Mid-Atlantic Region', amount: '254 / 309' },
+      { title: 'Rank in New York State', amount: '47 / 88' },
+
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
 </Layout>
-
-<style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
-		background-image: url("/pedal_bike_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg");
-		background-repeat: no-repeat;
-      background-size: cover;
-      background-position: 0% center, 50%, 50%;
-	  height:calc(100vh - 2rem);
-	}
-	.astro-a {
-		position: absolute;
-		bottom: 0%;
-		left: 0%;
-		transform: translateX(500px);
-		width: 100%;
-		height: auto;
-
-
-		z-index: -1;
-	}
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		margin-bottom: 2rem;
-		border: 1px solid rgba(var(--accent-light), 25%);
-		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
-		padding: 1.5rem;
-		border-radius: 8px;
-	}
-	.instructions code {
-		font-size: 0.8em;
-		font-weight: bold;
-		background: rgba(var(--accent-light), 12%);
-		color: rgb(var(--accent-light));
-		border-radius: 4px;
-		padding: 0.3em 0.4em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent-light));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 2rem;
-		padding: 0;
-	}
-</style>

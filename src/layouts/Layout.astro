@@ -1,106 +1,54 @@
 ---
-interface Props {
-	title: string;
-	description: string
+import '~/assets/styles/tailwind.css';
+
+import { I18N } from 'astrowind:config';
+
+import CommonMeta from '~/components/common/CommonMeta.astro';
+import Favicons from '~/components/Favicons.astro';
+import CustomStyles from '~/components/CustomStyles.astro';
+import ApplyColorMode from '~/components/common/ApplyColorMode.astro';
+import Metadata from '~/components/common/Metadata.astro';
+import SiteVerification from '~/components/common/SiteVerification.astro';
+import Analytics from '~/components/common/Analytics.astro';
+import BasicScripts from '~/components/common/BasicScripts.astro';
+
+// Comment the line below to disable View Transitions
+import { ViewTransitions } from 'astro:transitions';
+
+import type { MetaData as MetaDataType } from '~/types';
+
+export interface Props {
+  metadata?: MetaDataType;
 }
 
-const { title, description } = Astro.props;
-
-
-import { SEO } from "astro-seo";
-
-console.log({description});
-console.log("description");
-
-console.log(description.toString());
-
-let myVal = description.toString();
-
-let generator = Astro.generator.toString()
+const { metadata = {} } = Astro.props;
+const { language, textDirection } = I18N;
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<SEO
-		charset="UTF-8"
-		title={title}
-		description={description}
-		openGraph={{
-		  basic: {
-			title: myVal,
-			type: "website",
-			image: "https://syracusecyclistsunion.org/pedal_bike_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg",
-			url: "https://syracusecyclistsunion.org"
-		  }
-		}}
-		extend={{
-		  // extending the default link tags
-		  link: [{ rel: "icon", href: "/pedal_bike_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" }],
-		  // extending the default meta tags
-		  meta: [
-			{
-			  name: "viewport",
-			  content: "width=device-width",
-			},
-			{
-				name: "generator",
-				content: generator
-			}
-		  ],
-		}}
-	  />
+<html lang={language} dir={textDirection} class="2xl:text-[20px]">
+  <head>
+    <CommonMeta />
+    <Favicons />
+    <CustomStyles />
+    <ApplyColorMode />
+    <Metadata {...metadata} />
+    <SiteVerification />
+    <Analytics />
 
+    <!-- Comment the line below to disable View Transitions -->
+    <ViewTransitions fallback="swap" />
+  </head>
 
-		<!-- Google tag (gtag.js) -->
-		<script async type="text/partytown"  src="https://www.googletagmanager.com/gtag/js?id=G-WTGL9CTEQM"></script>
-		<script type="text/partytown">
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
+  <body class="antialiased text-default bg-page tracking-tight">
+    <slot />
 
-		gtag('config', 'G-WTGL9CTEQM');
-		</script>
-		<style>
-			.material-symbols-outlined {
-			  font-variation-settings:
-			  'FILL' 0,
-			  'wght' 400,
-			  'GRAD' 0,
-			  'opsz' 24
-			}
-			font-size: 20em;
-			</style>
-	</head>
-	<body>
-		<slot />
-	</body>
+    <BasicScripts />
+
+    <style is:global>
+      img {
+        content-visibility: auto;
+      }
+    </style>
+  </body>
 </html>
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-</style>

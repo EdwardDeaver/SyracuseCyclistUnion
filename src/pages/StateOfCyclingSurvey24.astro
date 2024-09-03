@@ -1,0 +1,26 @@
+---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Services',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    title="Our 2024 Demographic Survey"
+  />
+
+  <!-- Features2 Widget ************** -->
+  <div class="flex items-center justify-center">
+
+  <iframe title="Syracuse state of biking Survey" src="https://docs.google.com/forms/d/e/1FAIpQLSfyMfrz9QoVQtJ2J9cwTNsAG2fHSVudww6ITOZb7bBzFL-xDA/viewform?embedded=true" width="640" height="3241" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+</div>
+</Layout>
