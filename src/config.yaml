@@ -10,7 +10,7 @@ site:
 metadata:
   title:
     default: Syracuse Cyclists Union!
-    template: '%s — AstroWind'
+    template: '%s'
   description: "A lobbying organization to create a better Syracuse."
   robots:
     index: true
