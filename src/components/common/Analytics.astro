@@ -1,4 +1,5 @@
 ---
+import { GoogleAnalytics } from '@astrolib/analytics';
 import { ANALYTICS } from 'astrowind:config';
 
 const idString = "https://www.googletagmanager.com/gtag/js?id="+ANALYTICS.vendors.googleAnalytics.id;
@@ -7,12 +8,11 @@ console.log(id);
 
 ---
 
-
-<script type="text/partytown" src={String(idString)}></script>
+<script type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-WTGL9CTEQM"></script>
 <script type="text/partytown">
   window.dataLayer = window.dataLayer || [];
   window.gtag = function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', id);
+  gtag('config', 'G-WTGL9CTEQM');
 </script>
