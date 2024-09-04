@@ -7,10 +7,6 @@ export const headerData = {
       href: '/'
     },
     {
-      text: 'Blog',
-      href:getBlogPermalink()
-    },
-    {
       text: 'About',
       href: '/about',
     },
@@ -22,15 +18,9 @@ export const footerData = {
   links: [
     
     {
-      title: 'Company',
+      title: 'Syracuse Cyclists Union',
       links: [
-        { text: 'About', href: '#' },
-        { text: 'Blog', href: '#' },
-        { text: 'Careers', href: '#' },
-        { text: 'Press', href: '#' },
-        { text: 'Inclusion', href: '#' },
-        { text: 'Social Impact', href: '#' },
-        { text: 'Shop', href: '#' },
+        { text: 'About', href: '/about' },
       ],
     },
   ],
