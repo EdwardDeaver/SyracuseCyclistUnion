@@ -2,16 +2,14 @@
 import { GoogleAnalytics } from '@astrolib/analytics';
 import { ANALYTICS } from 'astrowind:config';
 
-const idString = "https://www.googletagmanager.com/gtag/js?id="+ANALYTICS.vendors.googleAnalytics.id;
-const id = ANALYTICS.vendors.googleAnalytics.id;
-console.log(id);
 
 ---
 
-<script type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-WTGL9CTEQM"></script>
-<script type="text/partytown">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WTGL9CTEQM"></script>
+<script>
   window.dataLayer = window.dataLayer || [];
-  window.gtag = function gtag(){dataLayer.push(arguments);}
+  function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'G-WTGL9CTEQM');
