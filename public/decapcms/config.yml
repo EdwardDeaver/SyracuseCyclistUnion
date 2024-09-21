@@ -1,6 +1,7 @@
 backend:
-  name: git-gateway
-  branch: main
+  name: github
+  repo: EdwardDeaver/SyracuseCyclistUnion
+  branch: master
 
 media_folder: 'src/assets/images'
 public_folder: '/_astro'
