@@ -10,6 +10,10 @@ export const headerData = {
       text: 'About',
       href: '/about',
     },
+    {
+      text: 'Blog',
+      href: '/blog',
+    },
   ],
   actions: [{ text: '2024 Demographic Survey', href: '/StateOfCyclingSurvey24', target: '_blank' }],
 };
