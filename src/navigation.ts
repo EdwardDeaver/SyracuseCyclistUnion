@@ -25,13 +25,15 @@ export const footerData = {
       title: 'Syracuse Cyclists Union',
       links: [
         { text: 'About', href: '/about' },
-        {text: 'email: {org name} @gmail.com'}
       ],
     },
   ],
 
 
   footNote: `
+  email: {org name} @gmail.com
+  <br>
+
  All rights reserved.
   `,
 };
