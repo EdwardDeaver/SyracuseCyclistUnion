@@ -1,26 +1,1479 @@
 ---
-import CallToAction from '~/components/widgets/CallToAction.astro';
-import Content from '~/components/widgets/Content.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import Hero from '~/components/widgets/Hero.astro';
-import Testimonials from '~/components/widgets/Testimonials.astro';
-import Layout from '~/layouts/PageLayout.astro';
+import Layout from "~/layouts/PageLayout.astro";
 
 const metadata = {
-  title: 'State Of Cycling Survey',
-  description: "Our 2024 survey to understand who cycles in Syracuse and their issues."
+  title: "State Of Cycling Survey",
+  description:
+    "Our 2024 survey to understand who cycles in Syracuse and their issues.",
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
+  <div
+    id="hs-scrollspy-scrollable-parent-basic-usage"
+    class="container content-center min-w-full"
+  >
+    <h1
+      class="w-full text-center text-5xl md:text-6xl font-bold leading-tighter tracking-tighter font-heading dark:text-gray-200"
+    >
+      2024 Survey Data
+    </h1>
+    <header
+      data-hs-scrollspy="#hs-scrollspy-basic-usage"
+      class="bg-white sticky top-0 z-50 flex items-center mt-2 p-5 whitespace-nowrap no-scrollbar flex-nowrap justify-center w-auto"
+    >
+      <a
+        href="#overview"
+        class="active mx-auto p-3 border-gray-200 border rounded w-auto h-16 text-sm md:text-base"
+        >Overview</a
+      >
+      <a
+        href="#demographics"
+        class="mx-auto p-3 border-gray-200 border rounded w-auto h-16 text-sm md:text-base"
+        >Demographics</a
+      >
+      <a
+        class="mx-auto p-3 border-gray-200 border rounded w-auto h-16 text-sm md:text-base"
+        href="#no">Safe:No</a
+      >
+      <a
+        class="mx-auto p-3 border-gray-200 border rounded w-auto h-16 text-sm md:text-base"
+        href="#yes">Safe:Yes</a
+      >
+    </header>
+    <h1
+      class="text-center
+text-xl md:text-xl font-bold leading-tighter tracking-tighter font-heading dark:text-gray-200"
+    >
+      Do you feel safe biking in Syracuse?
+    </h1>
 
-  <Hero
-    title="Our 2024 Demographic Survey"
-  />
-  <iframe  style="position:relative; border:0; min-height:4000px; width:100%;" title="Syracuse state of biking Survey" src="https://docs.google.com/forms/d/e/1FAIpQLSfyMfrz9QoVQtJ2J9cwTNsAG2fHSVudww6ITOZb7bBzFL-xDA/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    <div id="hs-scrollspy-basic-usage">
+      <div id="overview">
+        <div
+          class="flex items-center justify-center
+      content-center flex-row"
+        >
+          <canvas style="max-height:60vh;" id="myChart"></canvas>
+        </div>
+      </div>
+      <div
+        id="demographics"
+        class="min-h-screen flex-auto items-center justify-center
+      content-center flex-row mx-3"
+      >
+        <h2
+          class="text-4xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200"
+        >
+          Ages of Respondents
+        </h2>
+        <canvas style="max-height:30vh; " class="w-full min-w-100" id="ageTotal"
+        ></canvas>
+        <h2
+          class="text-4xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200"
+        >
+          Types of Riding
+        </h2>
+        <canvas
+          style="max-height:30vh;"
+          class="w-full min-w-100"
+          id="typesTotal"></canvas>
+        <h2
+          class="text-4xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200"
+        >
+          Gender Identity
+        </h2>
+        <canvas
+          style="max-height:30vh; "
+          class="w-full min-w-100"
+          id="typesGenderChart"></canvas>
+        <h2
+          class="text-4xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200"
+        >
+          Employment Status
+        </h2>
+        <canvas
+          style="max-height:30vh; "
+          class="w-full min-w-100"
+          id="typesEmploymentStatusChart"></canvas>
+        <h2
+          class="text-4xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200"
+        >
+          Economic Status
+        </h2>
+        <canvas
+          style="max-height:30vh; "
+          class="w-full min-w-100"
+          id="typesEconomicStatusChart"></canvas>
+      </div>
+      <div id="no"  class="min-h-screen flex-auto items-center justify-center
+      content-center flex-row mx-3">
+        <h2
+          class="border border-solid border-indigo-600 text-4xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200"
+        >
+          No:
+        </h2>
+
+        <h2
+          class="border-50 border-red-50 text-4xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200"
+        >
+          Gender Identity
+        </h2>
+        <canvas
+          style="max-height:30vh; "
+          class="w-full min-w-100"
+          id="typesNoResponseGenderChart"></canvas>
+        <h2
+          class="border-50 border-red-50 text-4xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200"
+        >
+          Ages
+        </h2>
+        <canvas
+        style="max-height:30vh; "
+        class="w-full min-w-100"
+        id="typesNoResponseAgeChart"></canvas>
+        
+        <h2
+        class="text-4xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200"
+      >
+        Economic Status
+      </h2>
+      <canvas
+      style="max-height:30vh; "
+      class="w-full min-w-100"
+      id="typesEconomicStatusChartByNo"></canvas>
+      <h2
+      class="text-4xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200"
+    >
+      Employment Status
+    </h2>
+    <canvas
+      style="max-height:30vh; "
+      class="w-full min-w-100"
+      id="typesEmploymentStatusChartByNo"></canvas>
+      <h2
+          class="text-4xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200"
+        >
+          Types of Riding
+        </h2>
+        <canvas
+          style="max-height:30vh;"
+          class="w-full min-w-100"
+          id="typesNoResponseRidingTypeChart"></canvas>
+
+        <h2
+          class="border-50 border-red-50 text-4xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200"
+        >
+          Why do you feel that way & what would you change?
+        </h2>
+        <div id="myGrid" style="height: 500px" class="w-full min-w-100"></div>
+      </div>
+      <div id="yes"  class="min-h-screen flex-auto items-center justify-center
+      content-center flex-row mx-3">
+        <h2
+          class="border border-solid border-indigo-600 text-4xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200"
+        >
+          Yes:
+        </h2>
+
+        <h2
+          class="border-50 border-red-50 text-4xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200"
+        >
+          Gender Identity
+        </h2>
+        <canvas
+          style="max-height:30vh;"
+          class="w-full min-w-100"
+          id="typesYesResponseGenderChart"></canvas>
+        <h2
+          class="border-50 border-red-50 text-4xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200"
+        >
+          Ages
+        </h2>
+        <canvas
+          style="max-height:30vh; "
+          class="w-full min-w-100"
+          id="typesYesResponseAgeChart"></canvas>
+          <h2
+          class="text-4xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200"
+        >
+          Employment Status
+        </h2>
+        <canvas
+          style="max-height:30vh; "
+          class="w-full min-w-100"
+          id="typesEmploymentStatusChartByYes"></canvas>
+        <h2
+          class="text-4xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200"
+        >
+          Economic Status
+        </h2>
+        <canvas
+          style="max-height:30vh; "
+          class="w-full min-w-100"
+          id="typesEconomicStatusChartByYes"></canvas>
+          <h2
+          class="text-4xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200"
+        >
+          Types of Riding
+        </h2>
+        <canvas
+          style="max-height:30vh;"
+          class="w-full min-w-100"
+          id="typesYesResponseRidingTypeChart"></canvas>
+        <h2
+          class="border-50 border-red-50 text-4xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200"
+        >
+          Why do you feel that way & what would you change?
+        </h2>
+        <div
+          id="yesResponsesInGrid"
+          style="height: 500px"
+          class="w-full min-w-100"
+        >
+        </div>
+      </div>
+      <script>
+        import * as d3 from "d3";
+        import Chart from "chart.js/auto";
+        import { AllCommunityModule, ModuleRegistry } from "ag-grid-community";
+        import { createGrid } from "ag-grid-community";
+        import ChartDataLabels from "chartjs-plugin-datalabels";
+import Background from "~/components/ui/Background.astro";
+
+        Chart.register(ChartDataLabels);
+
+        // Register all Community features
+        ModuleRegistry.registerModules([AllCommunityModule]);
+
+        const genderIDColorScheme = {
+          man: {
+            main: "rgba(0, 191, 125, 0.2)",
+            border: "rgba(0, 191, 125, 1)",
+          },
+          woman: {
+            main: "rgba(89, 40, 237, 0.2)",
+            border: "rgba(89, 40, 237, 1)",
+          },
+          nonbinary: {
+            main: "rgba(245, 118, 0, 0.2)",
+            border: "rgba(245, 118, 0, 1)",
+          },
+          prefernottosay: {
+            main: "rgba(0, 115, 230, 0.2)",
+            border: "rgba(0, 115, 230, 1)",
+          },
+        };
+        const recreationOrBothColorScheme = {
+          recreation: {
+            main: "rgba(211, 32, 87, 0.2)",
+            border: "rgba(211, 32, 87, 1)"
+          }, 
+          commuting:{
+            main: "rgba(62, 8, 167, 0.2)",
+            border: "rgba(62, 8, 167, 1)"
+          },
+          both: {
+            main: "rgba(147, 22, 121, 0.2)",
+            border: "rgba(147, 22, 121, 1)"
+          }
+
+        }
+        let YesResponses = [];
+        let NoResponses = [];
+        d3.csv("/data/2024_survey.csv", function (d) {
+          // 'd' is an object representing a row in the CSV
+          return {
+            vote: d["Do you feel safe riding your bicycle in Syracuse"],
+            why: d["Why or why not?"],
+            whatChange:
+              d[
+                "What changes would you like to see in cycling infrastructure?"
+              ],
+            futurePlans:
+              d[
+                "Does the current state of infrastructure affect your plans for the future?"
+              ],
+            typeOfRiding: d["What type of riding do you do?"],
+            genderIdentity: d["What gender you identify with?"],
+            employmentStatus: d["What is your employment status?"],
+            economicClass: d["Where economic class would you put yourself in?"],
+            age: d["What age range are you in?"],
+          };
+        })
+          .then(function (data) {
+            // 'data' is an array of processed objects
+            for (const element of data) {
+              if (element.vote == "Yes") {
+                YesResponses.push(element);
+              }
+              if (element.vote == "No") {
+                NoResponses.push(element);
+              }
+            }
+            // // console.log(YesResponses);
+            // // console.log(NoResponses);
+
+            const total = YesResponses.concat(NoResponses);
+
+            const ageGroupedTotal = Object.groupBy(total, ({ age }) => age);
+            // // console.log(ageGroupedTotal);
+
+            const chartData = {
+              labels: ["No", "Yes"],
+              datasets: [
+                {
+                  label: "Do you feel safe biking in Syracuse?",
+                  data: [NoResponses.length, YesResponses.length],
+                  backgroundColor: [
+                    "rgb(255, 99, 132)",
+                    "rgb(54, 162, 235)",
+                  ],
+                  datalabels: {
+                    align: "end",
+                    anchor: "end",
+                  },
+    
+                  hoverOffset: 4,
+                },
+              ],
+            };
+            const config = {
+              type: "doughnut",
+              data: chartData,
+
+              options: {
+                title: {
+                  display: true,
+                  text: "Do you feel safe biking in Syracuse?",
+                },
+                plugins:{
+                  autocolors: {
+        enabled: false
+      },
+                }
+              },
+            };
+            const ctx = document.getElementById("myChart");
+
+            new Chart(ctx, config);
+            ///////////////////////////////////////////////////////
+            // Age bar
+
+            let reOrderedTotalAges = {
+              "21-30": ageGroupedTotal["21-30"],
+              "31-40": ageGroupedTotal["31-40"],
+              "41-50": ageGroupedTotal["41-50"],
+              "51-60": ageGroupedTotal["51-60"],
+              "61-70": ageGroupedTotal["61-70"],
+              "71-80": ageGroupedTotal["71-80"],
+              "Prefer not to say": ageGroupedTotal["Prefer not to say"],
+            };
+
+            let sortedKeyAges = Object.keys(ageGroupedTotal);
+            let countOfamount = [];
+            for (const el of sortedKeyAges) {
+              // // console.log(reOrderedTotalAges[el]);
+              countOfamount.push(reOrderedTotalAges[el].length);
+            }
+
+            const ageBar = {
+              labels: Object.keys(reOrderedTotalAges),
+              
+              datasets: [
+                {
+                  label: "Ages of Participants",
+                  data: countOfamount,
+                  backgroundColor: ["#FF5F5D"],
+                  datalabels: {
+                    align: "end",
+                    anchor: "end",
+                  },
+    
+                  borderWidth: 1,
+                },
+              ],
+            };
+            const barChart = {
+              type: "bar",
+              data: ageBar,
+              options: {
+                plugins: {
+                  legend: {
+                    display: false,
+                  },
+      
+      autocolors: {
+        enabled: false
+
+      }
+    
+                  
+                },
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    max: Math.max(...countOfamount) + 10,
+                  },
+                },
+              },
+            };
+            const ageTotalChart = document.getElementById("ageTotal");
+
+            let ageTotalChatValue = new Chart(ageTotalChart, barChart);
+            
+            ////////////////////////////////////////
+            ///// Types of riding
+            ///////////////////
+            const Recreation = /^Recreation$/;
+            const Commuting = /^Commuting$/;
+            const Both = /^Recreation, Commuting$/;
+
+            let countofRec = 0;
+            let countofCommuting = 0;
+            let countOfBoth = 0;
+
+            total.forEach((value) => {
+              // // console.log(value.typeOfRiding);
+              if (value.typeOfRiding.match(Recreation)) {
+                countofRec++;
+              }
+              if (value.typeOfRiding.match(Commuting)) {
+                countofCommuting++;
+              }
+              if (value.typeOfRiding.match(Both)) {
+                countOfBoth++;
+              }
+            });
+
+            const totalTypesOfRiding = {
+              labels: ["Recreation", "Commuting", "Recreation, Commuting"],
+              datasets: [
+                {
+                  label: "Types of Riding",
+                  data: [countofRec, countofCommuting, countOfBoth],
+                  backgroundColor: ["#FF5F5D"],
+
+                
+                  datalabels: {
+                    align: "end",
+                    anchor: "end",
+                  },
+                 
+                  borderWidth: 1,
+                },
+              ],
+            };
+            const totalTypes = {
+              type: "bar",
+              data: totalTypesOfRiding,
+              options: {
+                plugins: {
+                  legend: {
+                    display: false,
+                  },
+                },
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    max:
+                      Math.max(countofRec, countofCommuting, countOfBoth) + 10,
+                  },
+                },
+              },
+            };
+            const typesTotalChart = document.getElementById("typesTotal");
+
+            new Chart(typesTotalChart, totalTypes);
+            
+
+            //////////////////////////////////          /////////////////
+            const ManCount = /^Man$/;
+            const WomanCount = /^Woman$/;
+            const OtherCount = /^Non-binary, genderqueer, or gender fluid$/;
+            const PreferNotToSayCount = /^Prefer not to say$/;
+
+            let countMan = 0;
+            let countWoman = 0;
+            let countOther = 0;
+            let countPreferNot = 0;
+
+            total.forEach((value) => {
+              // // console.log(value.typeOfRiding);
+              if (value.genderIdentity.match(ManCount)) {
+                countMan++;
+              }
+              if (value.genderIdentity.match(WomanCount)) {
+                countWoman++;
+              }
+              if (value.genderIdentity.match(OtherCount)) {
+                countOther++;
+              }
+              if (value.genderIdentity.match(PreferNotToSayCount)) {
+                countPreferNot++;
+              }
+            });
+
+            const totalGenders = {
+              labels: [
+                "Man",
+                "Woman",
+                "Non-binary, genderqueer, or gender fluid",
+                "Prefer not to say",
+              ],
+              datasets: [
+                {
+                  label: "Gender Identities of Riders",
+                  data: [countMan, countWoman, countOther, countPreferNot],
+                  backgroundColor: ["#FF5F5D"],
+
+                  datalabels: {
+                    align: "end",
+                    anchor: "end",
+                  },
+    
+                  borderWidth: 1,
+                },
+              ],
+            };
+            const totalGendersChart = {
+              type: "bar",
+              data: totalGenders,
+              options: {
+                plugins: {
+                  legend: {
+                    display: false,
+                  },
+                  autocolors: {
+        enabled: false
+
+      }
+                },
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    max:
+                      Math.max(
+                        countMan,
+                        countWoman,
+                        countOther,
+                        countPreferNot
+                      ) + 10,
+                  },
+                },
+              },
+            };
+            const typesGenderChart =
+              document.getElementById("typesGenderChart");
+
+            new Chart(typesGenderChart, totalGendersChart);
+            //////////////////////////////////////////////////////////////////////
+
+            const totalGroupedByEmployment = Object.groupBy(
+              total,
+              ({ employmentStatus }) => employmentStatus
+            );
+            // // console.log(totalGroupedByEmployment);
+            let countOfEmploymentAmounts = [];
+            for (const el of Object.keys(totalGroupedByEmployment)) {
+              // // // console.log(ageGroupedTotal[el]);
+              countOfEmploymentAmounts.push(
+                totalGroupedByEmployment[el].length
+              );
+            }
+            //// // console.log(Object.keys(totalGroupedByEmployment));
+            // // console.log(countOfEmploymentAmounts);
+            const totalEmployementChartOptions = {
+              labels: Object.keys(totalGroupedByEmployment),
+              datasets: [
+                {
+                  label: "Employment Statuses",
+                  data: countOfEmploymentAmounts,
+                  backgroundColor: ["#FF5F5D"],
+
+               
+                  datalabels: {
+                    align: "end",
+                    anchor: "end",
+                  },
+                  borderWidth: 1,
+                },
+              ],
+            };
+            const totalEmploymentChartChart = {
+              type: "bar",
+              data: totalEmployementChartOptions,
+              options: {
+                plugins: {
+                  legend: {
+                    display: false,
+                  },
+                },
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    max: Math.max(...countOfEmploymentAmounts) + 10,
+                  },
+                },
+              },
+            };
+            const typesEmploymentChart = document.getElementById(
+              "typesEmploymentStatusChart"
+            );
+
+            new Chart(typesEmploymentChart, totalEmploymentChartChart);
+            //////////////////////////////////////////////////////////////////////
+
+            const totalGroupedByEconomicStatus = Object.groupBy(
+              total,
+              ({ economicClass }) => economicClass
+            );
+
+            let reorderedtotalGroupedByEconomicStatus = {
+              "Lower Class": totalGroupedByEconomicStatus["Lower Class"],
+              "Lower Middle Class": totalGroupedByEconomicStatus["Lower Middle Class"],
+              "Middle Class": totalGroupedByEconomicStatus["Middle Class"],
+              "Upper Middle": totalGroupedByEconomicStatus["Upper Middle"],
+              "Prefer not to say": totalGroupedByEconomicStatus["Prefer not to say"],
+            };
+
+            // // console.log(totalGroupedByEconomicStatus);
+            let countOfEconomicAmounts = [];
+            for (const el of Object.keys(reorderedtotalGroupedByEconomicStatus)) {
+              // // // console.log(ageGroupedTotal[el]);
+              countOfEconomicAmounts.push(
+              reorderedtotalGroupedByEconomicStatus[el].length
+              );
+            }
+            //// // console.log(Object.keys(totalGroupedByEmployment));
+            // // console.log(countOfEconomicAmounts);
+            const totalEconomicClassChartOptions = {
+              labels: Object.keys(reorderedtotalGroupedByEconomicStatus),
+              datasets: [
+                {
+                  label: "Economic Classes",
+                  data: countOfEconomicAmounts,
+                  backgroundColor: ["#FF5F5D"],
+
+                 
+                  datalabels: {
+                    align: "end",
+                    anchor: "end",
+                  },
+                  borderWidth: 1,
+                },
+              ],
+            };
+            const totalEconomicClassChartChart = {
+              type: "bar",
+              data: totalEconomicClassChartOptions,
+              options: {
+                plugins: {
+                  legend: {
+                    display: false,
+                  },
+                },
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    max: Math.max(...countOfEconomicAmounts) + 10,
+                  },
+                },
+              },
+            };
+            const typesEconomicClassChart = document.getElementById(
+              "typesEconomicStatusChart"
+            );
+
+            new Chart(typesEconomicClassChart, totalEconomicClassChartChart);
+
+            ////////////////////////////////////////////////////////
+            // No Responses by Gender Identity
+            ////////////////////////////////////////////////////////
+            const NoResponsesByGenderStatus = Object.groupBy(
+              NoResponses,
+              ({ genderIdentity }) => genderIdentity
+            );
+            console.log(NoResponsesByGenderStatus);
+            let reorderedNoResponsesByGenderStatus = {
+              "Woman": NoResponsesByGenderStatus["Woman"],
+              "Man": NoResponsesByGenderStatus["Man"],
+              "Non-binary, genderqueer, or gender fluid": NoResponsesByGenderStatus["Non-binary, genderqueer, or gender fluid"],
+              "Prefer not to say": NoResponsesByGenderStatus["Prefer not to say"],
+            };
+            console.log(reorderedNoResponsesByGenderStatus);
+
+            // // console.log(NoResponsesByGenderStatus);
+            let countOfNoResponsesGender = [];
+            for (const el of Object.keys(reorderedNoResponsesByGenderStatus)) {
+              // // // console.log(ageGroupedTotal[el]);
+              countOfNoResponsesGender.push(
+              reorderedNoResponsesByGenderStatus[el].length
+              );
+            }
+            //// // console.log(Object.keys(totalGroupedByEmployment));
+            // // console.log(countOfNoResponsesGender);
+            const totalNoResponseGenderOptions = {
+              labels: Object.keys(reorderedNoResponsesByGenderStatus),
+              datasets: [
+                {
+                  label: "Gender Identities of No Response Riders",
+                  data: countOfNoResponsesGender,
+                  backgroundColor: ["#FF5F5D"],
+
+                  datalabels: {
+                    align: "end",
+                    anchor: "end",
+                  },
+                  borderWidth: 1,
+                },
+              ],
+            };
+            const totalNoResponseGenderStatusChart = {
+              type: "bar",
+              data: totalNoResponseGenderOptions,
+              options: {
+                plugins: {
+                  legend: {
+                    display: false,
+                  },
+                },
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    max: Math.max(...countOfNoResponsesGender) + 10,
+                  },
+                },
+              },
+            };
+            const typesNoResponsesGenderChart = document.getElementById(
+              "typesNoResponseGenderChart"
+            );
+
+            new Chart(
+              typesNoResponsesGenderChart,
+              totalNoResponseGenderStatusChart
+            );
+
+            ////////////////////////////////////////////////////////
+            // Count of No Responses by Age
+            ////////////////////////////////////////////////////////
+            const NoResponsesByAgeRange = Object.groupBy(
+              NoResponses,
+              ({ age }) => age
+            );
+            let reorderedNo = {
+              "21-30": NoResponsesByAgeRange["21-30"],
+              "31-40": NoResponsesByAgeRange["31-40"],
+              "41-50": NoResponsesByAgeRange["41-50"],
+              "51-60": NoResponsesByAgeRange["51-60"],
+              "61-70": NoResponsesByAgeRange["61-70"],
+              "71-80": NoResponsesByAgeRange["71-80"],
+              "Prefer not to say": NoResponsesByAgeRange["Prefer not to say"],
+            };
+
+            // // console.log(NoResponsesByAgeRange);
+            let countOfNoResponsesAge = [];
+            for (const el of Object.keys(reorderedNo)) {
+              // // // console.log(ageGroupedTotal[el]);
+              countOfNoResponsesAge.push(reorderedNo[el].length);
+            }
+            //// // console.log(Object.keys(totalGroupedByEmployment));
+            // // console.log(countOfNoResponsesAge);
+            const totalNoResponseAgeOptions = {
+              labels: Object.keys(reorderedNo),
+              datasets: [
+                {
+                  label: "No by Age",
+                  data: countOfNoResponsesAge,
+                  backgroundColor: ["#FF5F5D"],
+
+                  datalabels: {
+                    align: "end",
+                    anchor: "end",
+                  },
+                  borderWidth: 1,
+                },
+              ],
+            };
+            const totalNoResponsebyAgeChart = {
+              type: "bar",
+              data: totalNoResponseAgeOptions,
+              options: {
+                plugins: {
+                  legend: {
+                    display: false,
+                  },
+                    
+      autocolors: {
+        mode: 'data'
+      }
+    
+                },
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    max: Math.max(...countOfNoResponsesAge) + 10,
+                  },
+                },
+              },
+            };
+            const typesNoResponsesAgeChart = document.getElementById(
+              "typesNoResponseAgeChart"
+            );
+
+            new Chart(typesNoResponsesAgeChart, totalNoResponsebyAgeChart);
+
+            /////////////////////////////////
+
+/////
+// No by economic 
+///
+ ////////////////////////////////////////////////////////
+
+            const NoResponsesByEconomicRange = Object.groupBy(
+              NoResponses,
+              ({ economicClass }) => economicClass
+            );
+            // console.log(NoResponsesByEconomicRange)
+          
+            let reorderedEconomicNo = {
+              "Lower Class": NoResponsesByEconomicRange["Lower Class"],
+              "Lower Middle Class": NoResponsesByEconomicRange["Lower Middle Class"],
+              "Middle Class": NoResponsesByEconomicRange["Middle Class"],
+              "Upper Middle": NoResponsesByEconomicRange["Upper Middle"],
+              "Prefer not to say": NoResponsesByEconomicRange["Prefer not to say"],
+            };
+
+             // console.log(reorderedEconomicNo);
+            let countOfNoResponsesEconomic = [];
+            for (const el of Object.keys(reorderedEconomicNo)) {
+              // // // console.log(ageGroupedTotal[el]);
+              countOfNoResponsesEconomic.push(reorderedEconomicNo[el].length);
+            }
+            // console.log(countOfNoResponsesEconomic)
+            //// // console.log(Object.keys(totalGroupedByEmployment));
+            // // console.log(countOfNoResponsesAge);
+            const totalNoResponseEconomicOptions = {
+              labels: Object.keys(reorderedEconomicNo),
+              datasets: [
+                {
+                  label: "No by Economic Status",
+                  data: countOfNoResponsesEconomic,
+                  backgroundColor: ["#FF5F5D"],
+
+                  datalabels: {
+                    align: "end",
+                    anchor: "end",
+                  },
+                  borderWidth: 1,
+                },
+              ],
+            };
+            const totalNoResponsebyEconomicChart = {
+              type: "bar",
+              data: totalNoResponseEconomicOptions,
+              options: {
+                plugins: {
+                  legend: {
+                    display: false,
+                  },
+                    
+      autocolors: {
+        mode: 'data'
+      }
+    
+                },
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    max: Math.max(...countOfNoResponsesEconomic) + 10,
+                  },
+                },
+              },
+            };
+            const typesNoResponsesEconomicChart = document.getElementById(
+              "typesEconomicStatusChartByNo"
+            );
+
+            new Chart(typesNoResponsesEconomicChart, totalNoResponsebyEconomicChart);
+////
 
 
-  <!-- Features2 Widget ************** -->
+/// NO by employmentStatus
 
+const NoResponsesByemploymentStatusRange = Object.groupBy(
+              NoResponses,
+              ({ employmentStatus }) => employmentStatus
+            );
+            // console.log(NoResponsesByEconomicRange)
+          
+
+            let countOfNoResponsesemploymentStatus = [];
+            for (const el of Object.keys(NoResponsesByemploymentStatusRange)) {
+              // // // console.log(ageGroupedTotal[el]);
+              countOfNoResponsesemploymentStatus.push(NoResponsesByemploymentStatusRange[el].length);
+            }
+            // console.log(countOfNoResponsesEconomic)
+         
+            //// // console.log(Object.keys(totalGroupedByEmployment));
+            // // console.log(countOfNoResponsesAge);
+            const totalNoResponseemploymentStatusOptions = {
+              labels: Object.keys(NoResponsesByemploymentStatusRange),
+              datasets: [
+                {
+                  label: "No by Employment Status",
+                  data: countOfNoResponsesemploymentStatus,
+                  backgroundColor: ["#FF5F5D"],
+
+                  datalabels: {
+                    align: "end",
+                    anchor: "end",
+                  },
+                  borderWidth: 1,
+                },
+              ],
+            };
+            const totalNoResponsebyEmploymentStatusChart = {
+              type: "bar",
+              data: totalNoResponseemploymentStatusOptions,
+              options: {
+                plugins: {
+                  legend: {
+                    display: false,
+                  },
+                  
+    
+                },
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    max: Math.max(...countOfNoResponsesemploymentStatus) + 10,
+                  },
+                },
+              },
+            };
+            const typesNoResponsesEmploymentStatusChart = document.getElementById(
+              "typesEmploymentStatusChartByNo"
+            );
+
+            new Chart(typesNoResponsesEmploymentStatusChart, totalNoResponsebyEmploymentStatusChart);
+/////
+// Types of Riding
+///
+ ////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////
+            const NoResponsesByRidingType = Object.groupBy(
+              NoResponses,
+              ({ typeOfRiding }) => typeOfRiding
+            );
+            console.log(NoResponsesByRidingType);
+            let reorderedNoResponsesByRidingType = {
+              "Recreation": NoResponsesByRidingType["Recreation"],
+              "Commuting": NoResponsesByRidingType["Commuting"],
+              "Recreation, Commuting": NoResponsesByRidingType["Recreation, Commuting"]
+            };
+           
+            console.log(reorderedNoResponsesByRidingType);
+            console.log(Object.keys(reorderedNoResponsesByRidingType))
+            // // console.log(NoResponsesByGenderStatus);
+            let countOfNoResponsesRidingType = [];
+            for (const el of Object.keys(reorderedNoResponsesByRidingType)) {
+              // // // console.log(ageGroupedTotal[el]);
+              countOfNoResponsesRidingType.push(
+              reorderedNoResponsesByRidingType[el].length
+              );
+            }
+            //// // console.log(Object.keys(totalGroupedByEmployment));
+            // // console.log(countOfNoResponsesGender);
+            const totalNoResponseRidingType = {
+              labels: Object.keys(reorderedNoResponsesByRidingType),
+              datasets: [
+                {
+                  label: "Riding Type of No Response Riders",
+                  data: countOfNoResponsesRidingType,
+                  backgroundColor: ["#FF5F5D"],
+
+                  datalabels: {
+                    align: "end",
+                    anchor: "end",
+                  },
+                  borderWidth: 1,
+                },
+              ],
+            };
+            const totalNoResponseRidingTypeChart = {
+              type: "bar",
+              data: totalNoResponseRidingType,
+              options: {
+                plugins: {
+                  legend: {
+                    display: false,
+                  },
+                },
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    max: Math.max(...countOfNoResponsesRidingType) + 10,
+                  },
+                },
+              },
+            };
+            const typesNoResponsesRidingTypeChart = document.getElementById(
+              "typesNoResponseRidingTypeChart"
+            );
+
+            new Chart(
+            typesNoResponsesRidingTypeChart,
+              totalNoResponseRidingTypeChart
+            );
+
+
+            //////////
+
+            // Grid Options: Contains all of the Data Grid configurations
+            // Grid Options: Contains all of the Data Grid configurations
+            const gridOptions = {
+              // Row Data: The data to be displayed.
+
+              rowData: NoResponses,
+              // Column Definitions: Defines the columns to be displayed.
+              defaultColDef: {
+                flex: 1,
+                filter: true,
+              },
+              columnDefs: [
+                {
+                  headerName: "Row",
+                  valueGetter: "node.rowIndex + 1",
+                },
+                {
+                  field: "why",
+                  wrapText: true,
+                  autoHeight: true, // Adjust Cell Height to Fit Wrapped Text
+                  // Wrap Text
+                },
+                {
+                  field: "whatChange",
+                  wrapText: true,
+                  autoHeight: true, // Adjust Cell Height to Fit Wrapped Text
+                  // Wrap Text
+                },
+              ],
+            };
+
+            // Your Javascript code to create the Data Grid
+            const myGridElement = document.querySelector("#myGrid");
+            createGrid(myGridElement, gridOptions);
+            ////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////
+            // Yes Responses by Gender Identity
+            ////////////////////////////////////////////////////////
+            const YesResponsesByGenderStatus = Object.groupBy(
+              YesResponses,
+              ({ genderIdentity }) => genderIdentity
+            );
+            console.log(NoResponsesByGenderStatus);
+            let reorderedYesResponsesByGenderStatus = {
+              "Woman": YesResponsesByGenderStatus["Woman"],
+              "Man": YesResponsesByGenderStatus["Man"],
+              "Non-binary, genderqueer, or gender fluid": YesResponsesByGenderStatus["Non-binary, genderqueer, or gender fluid"],
+              "Prefer not to say": YesResponsesByGenderStatus["Prefer not to say"],
+            };
+            // // console.log(YesResponsesByGenderStatus);
+            let countOfYesResponsesGender = [];
+            for (const el of Object.keys(reorderedYesResponsesByGenderStatus)) {
+              // // // console.log(ageGroupedTotal[el]);
+              countOfYesResponsesGender.push(
+              reorderedYesResponsesByGenderStatus[el].length
+              );
+            }
+            //// // console.log(Object.keys(totalGroupedByEmployment));
+            // // console.log(countOfYesResponsesGender);
+            const totalYesResponseGenderOptions = {
+              labels: Object.keys(reorderedYesResponsesByGenderStatus),
+              datasets: [
+                {
+                  label: "Gender Identities of Yes Response Riders",
+                  data: countOfYesResponsesGender,
+                  backgroundColor: ["#FF5F5D"],
+
+                  datalabels: {
+                    align: "end",
+                    anchor: "end",
+                  },
+                  borderWidth: 1,
+                },
+              ],
+            };
+            const totalYesResponseGenderStatusChart = {
+              type: "bar",
+              data: totalYesResponseGenderOptions,
+              options: {
+                plugins: {
+                  legend: {
+                    display: false,
+                  },
+                },
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    max: Math.max(...countOfYesResponsesGender) + 10,
+                  },
+                },
+              },
+            };
+            const typesYesResponsesGenderChart = document.getElementById(
+              "typesYesResponseGenderChart"
+            );
+
+            new Chart(
+              typesYesResponsesGenderChart,
+              totalYesResponseGenderStatusChart
+            );
+
+            ////////////////////////////////////////////////////////
+            // Count of Yes Responses by Age
+            ////////////////////////////////////////////////////////
+            const YesResponsesByAgeRange = Object.groupBy(
+              YesResponses,
+              ({ age }) => age
+            );
+            let reorderedYes = {
+              "21-30": YesResponsesByAgeRange["21-30"],
+              "31-40": YesResponsesByAgeRange["31-40"],
+              "41-50": YesResponsesByAgeRange["41-50"],
+              "51-60": YesResponsesByAgeRange["51-60"],
+              "71-80": YesResponsesByAgeRange["71-80"],
+            };
+            // // console.log(YesResponsesByAgeRange);
+            let countOfYesResponsesAge = [];
+            for (const el of Object.keys(reorderedYes)) {
+              // // // console.log(ageGroupedTotal[el]);
+              countOfYesResponsesAge.push(reorderedYes[el].length);
+            }
+            //// // console.log(Object.keys(totalGroupedByEmployment));
+            // // console.log(countOfYesResponsesAge);
+            const totalYesResponseAgeOptions = {
+              labels: Object.keys(reorderedYes),
+              datasets: [
+                {
+                  label: "Yes by Age",
+                  data: countOfYesResponsesAge,
+                  backgroundColor: ["#FF5F5D"],
+
+                  datalabels: {
+                    align: "end",
+                    anchor: "end",
+                  },
+               
+                  borderWidth: 1,
+                },
+              ],
+            };
+            const totalYesResponsebyAgeChart = {
+              type: "bar",
+              data: totalYesResponseAgeOptions,
+              options: {
+                plugins: {
+                  legend: {
+                    display: false,
+                  },
+                },
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    max: Math.max(...countOfYesResponsesAge) + 10,
+                  },
+                },
+              },
+            };
+            const typesYesResponsesAgeChartDOM = document.getElementById(
+              "typesYesResponseAgeChart"
+            );
+
+            new Chart(typesYesResponsesAgeChartDOM, totalYesResponsebyAgeChart);
+
+            //////////
+
+/// YES by employmentStatus
+
+const YesResponsesByemploymentStatusRange = Object.groupBy(
+              YesResponses,
+              ({ employmentStatus }) => employmentStatus
+            );
+            // console.log(NoResponsesByEconomicRange)
+          
+
+            let countOfYesResponsesemploymentStatus = [];
+            for (const el of Object.keys(YesResponsesByemploymentStatusRange)) {
+              // // // console.log(ageGroupedTotal[el]);
+              countOfYesResponsesemploymentStatus.push(YesResponsesByemploymentStatusRange[el].length);
+            }
+            // console.log(countOfYesResponsesemploymentStatus)
+         
+            //// // console.log(Object.keys(totalGroupedByEmployment));
+            // // console.log(countOfNoResponsesAge);
+            const totalYesResponseemploymentStatusOptions = {
+              labels: Object.keys(YesResponsesByemploymentStatusRange),
+              datasets: [
+                {
+                  label: "Yes by Employment Status",
+                  data: countOfYesResponsesemploymentStatus,
+                  backgroundColor: ["#FF5F5D"],
+
+                  datalabels: {
+                    align: "end",
+                    anchor: "end",
+                  },
+                  borderWidth: 1,
+                },
+              ],
+            };
+            const totalYesResponsebyEmploymentStatusChart = {
+              type: "bar",
+              data: totalYesResponseemploymentStatusOptions,
+              options: {
+                plugins: {
+                  legend: {
+                    display: false,
+                  },
+                  
+    
+                },
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    max: Math.max(...countOfYesResponsesemploymentStatus) + 10,
+                  },
+                },
+              },
+            };
+            const typesYesResponsesEmploymentStatusChart = document.getElementById(
+              "typesEmploymentStatusChartByYes"
+            );
+
+            new Chart(typesYesResponsesEmploymentStatusChart, totalYesResponsebyEmploymentStatusChart);
+
+
+            /////
+// Yes by economic 
+///
+ ////////////////////////////////////////////////////////
+
+ const YesResponsesByEconomicRange = Object.groupBy(
+              YesResponses,
+              ({ economicClass }) => economicClass
+            );
+            // console.log(NoResponsesByEconomicRange)
+          
+            let reorderedEconomicYes = {
+              "Lower Class": YesResponsesByEconomicRange["Lower Class"],
+              "Lower Middle Class": YesResponsesByEconomicRange["Lower Middle Class"],
+              "Middle Class": YesResponsesByEconomicRange["Middle Class"],
+              "Upper Middle": YesResponsesByEconomicRange["Upper Middle"],
+              "Prefer not to say": YesResponsesByEconomicRange["Prefer not to say"],
+            };
+
+             // console.log(reorderedEconomicYes);
+            let countOfYesResponsesEconomic = [];
+            for (const el of Object.keys(reorderedEconomicYes)) {
+              // // // console.log(ageGroupedTotal[el]);
+              countOfYesResponsesEconomic.push(reorderedEconomicYes[el].length);
+            }
+            // console.log(countOfYesResponsesEconomic)
+            //// // console.log(Object.keys(totalGroupedByEmployment));
+            // // console.log(countOfNoResponsesAge);
+            const totalYesResponseEconomicOptions = {
+              labels: Object.keys(reorderedEconomicYes),
+              datasets: [
+                {
+                  label: "Yes by Economic Status",
+                  data: countOfYesResponsesEconomic,
+                  backgroundColor: ["#FF5F5D"],
+
+                  datalabels: {
+                    align: "end",
+                    anchor: "end",
+                  },
+                  borderWidth: 1,
+                },
+              ],
+            };
+            const totalYesResponsebyEconomicChart = {
+              type: "bar",
+              data: totalYesResponseEconomicOptions,
+              options: {
+                plugins: {
+                  legend: {
+                    display: false,
+                  },
+                    
+      autocolors: {
+        mode: 'data'
+      }
+    
+                },
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    max: Math.max(...countOfYesResponsesEconomic) + 10,
+                  },
+                },
+              },
+            };
+            const typesYesResponsesEconomicChart = document.getElementById(
+              "typesEconomicStatusChartByYes"
+            );
+
+            new Chart(typesYesResponsesEconomicChart, totalYesResponsebyEconomicChart);
+
+
+  ///////////
+  //
+  // Yes by riding type
+  ////////////
+
+  /////
+// Types of Riding
+///
+ ////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////
+            const YesResponsesByRidingType = Object.groupBy(
+              YesResponses,
+              ({ typeOfRiding }) => typeOfRiding
+            );
+            console.log(YesResponsesByRidingType);
+            let YesResponsesReorderByRidingType = {
+              "Recreation": YesResponsesByRidingType["Recreation"],
+              "Commuting": YesResponsesByRidingType["Commuting"],
+              "Recreation, Commuting": YesResponsesByRidingType["Recreation, Commuting"]
+            };
+           
+            console.log(YesResponsesReorderByRidingType);
+            console.log(Object.keys(YesResponsesReorderByRidingType))
+            // // console.log(NoResponsesByGenderStatus);
+            let countOfYesResponsesRidingType = [];
+            for (const el of Object.keys(YesResponsesReorderByRidingType)) {
+              // // // console.log(ageGroupedTotal[el]);
+              countOfYesResponsesRidingType.push(
+              YesResponsesReorderByRidingType[el].length
+              );
+            }
+            console.log(countOfYesResponsesRidingType);
+            //// // console.log(Object.keys(totalGroupedByEmployment));
+            // // console.log(countOfNoResponsesGender);
+            const totalYesResponseRidingType = {
+              labels: Object.keys(YesResponsesReorderByRidingType),
+              datasets: [
+                {
+                  label: "Riding Type of Yes Response Riders",
+                  data: countOfYesResponsesRidingType,
+                  backgroundColor: ["#FF5F5D"],
+
+                  datalabels: {
+                    align: "end",
+                    anchor: "end",
+                  },
+                  borderWidth: 1,
+                },
+              ],
+            };
+            const totalYesResponseRidingTypeChart = {
+              type: "bar",
+              data: totalYesResponseRidingType,
+              options: {
+                plugins: {
+                  legend: {
+                    display: false,
+                  },
+                },
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    max: Math.max(...countOfYesResponsesRidingType) + 10,
+                  },
+                },
+              },
+            };
+            const typesYesResponsesRidingTypeChart = document.getElementById(
+              "typesYesResponseRidingTypeChart"
+            );
+
+            new Chart(
+            typesYesResponsesRidingTypeChart,
+            totalYesResponseRidingTypeChart
+            );
+
+            // Grid Options: Contains all of the Data Grid configurations
+            // Grid Options: Contains all of the Data Grid configurations
+            const gridOptionsYesResponses = {
+              // Row Data: The data to be displayed.
+
+              rowData: YesResponses,
+              // Column Definitions: Defines the columns to be displayed.
+              defaultColDef: {
+                flex: 1,
+                filter: true,
+              },
+              columnDefs: [
+                {
+                  headerName: "Row",
+                  valueGetter: "node.rowIndex + 1",
+                },
+                {
+                  field: "why",
+                  wrapText: true,
+                  autoHeight: true, // Adjust Cell Height to Fit Wrapped Text
+                  // Wrap Text
+                },
+                {
+                  field: "whatChange",
+                  wrapText: true,
+                  autoHeight: true, // Adjust Cell Height to Fit Wrapped Text
+                  // Wrap Text
+                },
+              ],
+            };
+
+            // Your Javascript code to create the Data Grid
+            const myYesResponsesElement = document.querySelector(
+              "#yesResponsesInGrid"
+            );
+            createGrid(myYesResponsesElement, gridOptionsYesResponses);
+            ////////////////////////////////////////////////////
+          })
+          .catch(function (error) {
+            // Handle any errors that occurred during loading or parsing
+            console.error(error);
+          });
+      </script>
+
+      <script src="../../node_modules/preline/dist/preline.js">
+        const el = HSScrollspy.getInstance(
+          '[data-hs-scrollspy="#scrollspy-example"]',
+          true
+        );
+        const collapse = HSCollapse.getInstance(
+          '[data-hs-collapse="#navbar-collapse-example"]',
+          true
+        );
+
+        el.element.on("beforeScroll", (instance) => {
+          return new Promise((res) => {
+            if (collapse.element.el.classList.contains("open")) {
+              collapse.element.hide();
+              HSStaticMethods.afterTransition(collapse.element.content, () =>
+                res(true)
+              );
+            } else {
+              res(true);
+            }
+          });
+        });
+      </script>
+
+      <!-- Features2 Widget ************** -->
+    </div>
+  </div>
 </Layout>
