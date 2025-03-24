@@ -71,5 +71,8 @@
     "typescript": "^5.5.4",
     "typescript-eslint": "^8.4.0",
     "unist-util-visit": "^5.0.0"
-  }
+  },
+  "optionalDependencies": {
+  "@rollup/rollup-linux-x64-gnu": "*"
+}
 }
