@@ -1,6 +1,5 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
 import Hero from '~/components/widgets/Hero.astro';
 import Note from '~/components/widgets/Note.astro';
 import Stats from '~/components/widgets/Stats.astro';
@@ -13,15 +12,16 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
+   
   <Hero
     tagline="Do you feel safe biking in Syracuse?"
-    title="Take our 2024 State of Syracuse Cycling Demographic survey"
-    subtitle="Your voice matters."
+    title="See our 2024 State of Syracuse Cycling Demographic survey"
     actions={[
-      { variant: 'primary', text: 'Take the survey!', href: '/StateOfCyclingSurvey24', icon: 'tabler:square-rounded-arrow-right' },
+      { variant: 'primary', text: 'See the 2024 data!', href: '/StateOfCyclingSurvey24', icon: 'tabler:square-rounded-arrow-right' },
     ]}
-
   />
+
+
 
 <Note body="It should not be a life or death situation to bike" />
 
