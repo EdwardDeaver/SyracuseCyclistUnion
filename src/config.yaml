@@ -18,7 +18,7 @@ metadata:
   openGraph:
     site_name: Syracuse Cyclists Union
     images:
-      - url: '~/assets/images/Bike_SharingLogo.jpeg'
+      - url: '/assets/images/bike_lobby_logo.jpeg'
         width: 1200
         height: 628
     type: website
