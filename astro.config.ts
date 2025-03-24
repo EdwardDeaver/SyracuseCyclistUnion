@@ -1,5 +1,6 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { passthroughImageService } from "astro/config";
 
 import { defineConfig } from 'astro/config';
 
@@ -23,7 +24,9 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
 
 export default defineConfig({
   output: 'static',
-
+ image: {
+   service: passthroughImageService(),
+ },
   integrations: [
     tailwind({
       applyBaseStyles: false,
@@ -71,10 +74,6 @@ export default defineConfig({
     }),
   ],
 
-  image: {
-    domains: ['cdn.pixabay.com'],
-  },
-
   markdown: {
     remarkPlugins: [readingTimeRemarkPlugin],
     rehypePlugins: [responsiveTablesRehypePlugin, lazyImagesRehypePlugin],
@@ -82,6 +81,8 @@ export default defineConfig({
 
   vite: {
 
+
+  
     preview:{
       allowedHosts: true
     },
