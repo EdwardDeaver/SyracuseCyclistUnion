@@ -11,11 +11,15 @@ export const headerData = {
       href: '/about',
     },
     {
+      text: '2024 Survey Results',
+      href: '/StateOfCyclingSurvey24',
+    },
+    {
       text: 'Blog',
       href: '/blog',
     },
   ],
-  actions: [{ text: '2024 Demographic Survey', href: '/StateOfCyclingSurvey24', target: '_blank' }],
+  actions: [{ text: '2025 Demographic Survey', href: '/StateOfCyclingSurvey25', target: '_blank' }],
 };
 
 export const footerData = {
