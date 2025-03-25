@@ -4,9 +4,17 @@ import Hero from '~/components/widgets/Hero.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
-  title: 'State Of Cycling Survey',
-  description: "Our 2025 survey to understand who cycles in Syracuse and their issues."
-};
+  title:'State Of Cycling Survey 2025',
+  description:"Our 2025 survey to understand who cycles in Syracuse and their issues.",
+  openGraph:{
+    url: 'https://syracusecyclistsunion.org/StateOfCyclingSurvey25/',
+    title: 'State Of Cycling Survey 2025',
+    description: "Our 2025 survey to understand who cycles in Syracuse and their issues.",
+  },
+    site_name: 'Syracuse Cyclists Union',
+  }
+
+
 ---
 
 <Layout metadata={metadata}>
