@@ -18,14 +18,11 @@ metadata:
   openGraph:
     site_name: Syracuse Cyclists Union
     images:
-      - url: '/assets/images/bike_lobby_logo.jpeg'
+      - url: '~/assets/images/Bike_SharingLogo.jpeg'
         width: 1200
         height: 628
     type: website
-  twitter:
-    handle: '@onwidget'
-    site: '@onwidget'
-    cardType: summary_large_image
+
 
 i18n:
   language: en

@@ -1,14 +1,30 @@
 ---
 import Layout from "~/layouts/PageLayout.astro";
+import imageOG from "~/assets/images/screenshot_results_24.png"
 
-const metadata = {
-  title: "State Of Cycling Survey",
-  description:
-    "Our 2024 survey to understand who cycles in Syracuse and their issues.",
-};
+const metadata2 = {
+  title:"State of Cycling 2024",
+  description:"The charted data from the 2024 survey. 71 of 100 do not feel safe biking in Syracuse.",
+  openGraph:{
+    url: 'https://syracusecyclistsunion.org/StateOfCyclingSurvey24/',
+    title: 'Syracuse State of Cycling 2024',
+    description: 'The charted data from the 2024 survey. 71 of 100 do not feel safe biking in Syracuse.',
+    images: [
+      {
+        url: '~/assets/images/screenshot_results_24.png',
+        width: 800,
+        height: 600,
+        alt: '71/100 do not feel safe biking in Syracuse',
+        type: 'image/jpeg',
+      },
+    ],
+    site_name: 'Syracuse Cyclists Union',
+  }
+}
+
 ---
 
-<Layout metadata={metadata}>
+<Layout metadata={metadata2}>
   <div
     id="hs-scrollspy-scrollable-parent-basic-usage"
     class="container content-center min-w-full"
