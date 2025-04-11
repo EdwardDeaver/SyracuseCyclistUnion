@@ -1,5 +1,4 @@
 @custom-variant hs-combo-box-active {
-
   &.active {
     @slot;
   }
@@ -10,7 +9,6 @@
 }
 
 @custom-variant hs-combo-box-has-value {
-
   &.has-value {
     @slot;
   }
@@ -21,7 +19,6 @@
 }
 
 @custom-variant hs-combo-box-selected {
-
   &.selected {
     @slot;
   }

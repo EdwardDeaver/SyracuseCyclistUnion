@@ -1,5 +1,4 @@
 @custom-variant hs-collapse-open {
-
   &.hs-collapse.open {
     @slot;
   }

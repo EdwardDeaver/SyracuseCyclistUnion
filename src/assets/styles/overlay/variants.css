@@ -1,5 +1,4 @@
 @custom-variant hs-overlay-open {
-
   &.open {
     @slot;
   }
@@ -10,7 +9,6 @@
 }
 
 @custom-variant hs-overlay-layout-open {
-
   &.hs-overlay-body-open {
     @slot;
   }
@@ -21,7 +19,6 @@
 }
 
 @custom-variant hs-overlay-backdrop-open {
-
   &.hs-overlay-backdrop {
     @slot;
   }

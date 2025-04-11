@@ -40,20 +40,20 @@ const metadata2 = {
     >
       <a
         href="#overview"
-        class="active mx-auto p-3 border-gray-200 border rounded w-auto h-16 text-sm md:text-base"
+        class="active mx-auto p-3 border-gray-200 border rounded-sm w-auto h-16 text-sm md:text-base"
         >Overview</a
       >
       <a
         href="#demographics"
-        class="mx-auto p-3 border-gray-200 border rounded w-auto h-16 text-sm md:text-base"
+        class="mx-auto p-3 border-gray-200 border rounded-sm w-auto h-16 text-sm md:text-base"
         >Demographics</a
       >
       <a
-        class="mx-auto p-3 border-gray-200 border rounded w-auto h-16 text-sm md:text-base"
+        class="mx-auto p-3 border-gray-200 border rounded-sm w-auto h-16 text-sm md:text-base"
         href="#no">Safe:No</a
       >
       <a
-        class="mx-auto p-3 border-gray-200 border rounded w-auto h-16 text-sm md:text-base"
+        class="mx-auto p-3 border-gray-200 border rounded-sm w-auto h-16 text-sm md:text-base"
         href="#yes">Safe:Yes</a
       >
     </header>
@@ -1051,6 +1051,7 @@ const NoResponsesByemploymentStatusRange = Object.groupBy(
             // Grid Options: Contains all of the Data Grid configurations
             const gridOptions = {
               // Row Data: The data to be displayed.
+              enableCellTextSelection: true,
 
               rowData: NoResponses,
               // Column Definitions: Defines the columns to be displayed.
@@ -1425,6 +1426,8 @@ const YesResponsesByemploymentStatusRange = Object.groupBy(
             // Grid Options: Contains all of the Data Grid configurations
             const gridOptionsYesResponses = {
               // Row Data: The data to be displayed.
+
+              enableCellTextSelection: true,
 
               rowData: YesResponses,
               // Column Definitions: Defines the columns to be displayed.

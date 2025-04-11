@@ -1,73 +1,70 @@
+/* Preline */
+@import './dropdown/variants.css';
+@import './remove-element/variants.css';
+@import './tooltip/variants.css';
+@import './accordion/variants.css';
+@import './tree-view/variants.css';
+@import './collapse/variants.css';
+@import './tabs/variants.css';
+@import './overlay/variants.css';
+@import './scrollspy/variants.css';
+@import './carousel/variants.css';
+@import './select/variants.css';
+@import './input-number/variants.css';
+@import './pin-input/variants.css';
+@import './strong-password/variants.css';
+@import './stepper/variants.css';
+@import './combobox/variants.css';
+@import './layout-splitter/variants.css';
+@import './scroll-nav/variants.css';
+@import './datatable/variants.css';
+@import './range-slider/variants.css';
+@import './file-upload/variants.css';
+@import './datepicker/variants.css';
+@import './theme-switch/variants.css';
+
 /* States */
 @custom-variant hs-success {
+  &.success {
+    @slot;
+  }
 
-    &.success {
-      @slot;
-    }
-  
-    .success & {
-      @slot;
-    }
+  .success & {
+    @slot;
   }
-  
-  @custom-variant hs-error {
-  
-    &.error {
-      @slot;
-    }
-  
-    .error & {
-      @slot;
-    }
+}
+
+@custom-variant hs-error {
+  &.error {
+    @slot;
   }
-  
-  /* Preline */
-  @import './dropdown/variants.css';
-  @import './remove-element/variants.css';
-  @import './tooltip/variants.css';
-  @import './accordion/variants.css';
-  @import './tree-view/variants.css';
-  @import './collapse/variants.css';
-  @import './tabs/variants.css';
-  @import './overlay/variants.css';
-  @import './scrollspy/variants.css';
-  @import './carousel/variants.css';
-  @import './select/variants.css';
-  @import './input-number/variants.css';
-  @import './pin-input/variants.css';
-  @import './strong-password/variants.css';
-  @import './stepper/variants.css';
-  @import './combobox/variants.css';
-  @import './layout-splitter/variants.css';
-  @import './scroll-nav/variants.css';
-  @import './datatable/variants.css';
-  @import './range-slider/variants.css';
-  @import './file-upload/variants.css';
-  @import './datepicker/variants.css';
-  @import './theme-switch/variants.css';
-  
-  /* Apexcharts */
-  @custom-variant hs-apexcharts-tooltip-dark {
-    &.dark {
-      @slot;
-    }
+
+  .error & {
+    @slot;
   }
-  
-  /* Sortable.js */
-  @custom-variant hs-dragged {
-    &.dragged {
-      @slot;
-    }
+}
+
+/* Apexcharts */
+@custom-variant hs-apexcharts-tooltip-dark {
+  &.dark {
+    @slot;
   }
-  
-  /* Toastify */
-  @custom-variant hs-toastify-on {
-  
-    &.toastify.on {
-      @slot;
-    }
-  
-    .toastify.on & {
-      @slot;
-    }
+}
+
+/* Sortable.js */
+@custom-variant hs-dragged {
+  &.dragged {
+    @slot;
   }
+}
+
+/* Toastify */
+@custom-variant hs-toastify-on {
+  &.toastify.on {
+    @slot;
+  }
+
+  .toastify.on & {
+    @slot;
+  }
+}

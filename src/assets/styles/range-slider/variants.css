@@ -1,5 +1,4 @@
 @custom-variant hs-range-slider-disabled {
-
   &.disabled {
     @slot;
   }

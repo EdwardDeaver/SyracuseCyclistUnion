@@ -1,5 +1,4 @@
 @custom-variant hs-selected {
-
   &.selected {
     @slot;
   }
@@ -10,7 +9,6 @@
 }
 
 @custom-variant hs-select-disabled {
-
   &.disabled {
     @slot;
   }
@@ -21,7 +19,6 @@
 }
 
 @custom-variant hs-select-active {
-
   &.active {
     @slot;
   }

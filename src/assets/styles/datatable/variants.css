@@ -1,5 +1,4 @@
 @custom-variant hs-datatable-ordering-asc {
-
   &.dt-ordering-asc {
     @slot;
   }
@@ -10,7 +9,6 @@
 }
 
 @custom-variant hs-datatable-ordering-desc {
-
   &.dt-ordering-desc {
     @slot;
   }

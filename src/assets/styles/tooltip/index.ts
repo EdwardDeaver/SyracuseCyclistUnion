@@ -71,7 +71,7 @@ class HSTooltip extends HSBasePlugin<{}> implements ITooltip {
 		this.hide();
 
 		this.toggle.removeEventListener('click', this.onToggleHandleListener, true);
-		this.toggle.removeEventListener('blur', this.onToggleHandleListener, true);
+		this.toggle.removeEventListener('blur-sm', this.onToggleHandleListener, true);
 	}
 
 	private init() {
@@ -120,7 +120,7 @@ class HSTooltip extends HSBasePlugin<{}> implements ITooltip {
 		};
 
 		this.toggle.addEventListener('click', this.onToggleHandleListener, true);
-		this.toggle.addEventListener('blur', this.onToggleHandleListener, true);
+		this.toggle.addEventListener('blur-sm', this.onToggleHandleListener, true);
 	}
 
 	private focus() {
@@ -129,10 +129,10 @@ class HSTooltip extends HSBasePlugin<{}> implements ITooltip {
 		const handle = () => {
 			this.hide();
 
-			this.toggle.removeEventListener('blur', handle, true);
+			this.toggle.removeEventListener('blur-sm', handle, true);
 		};
 
-		this.toggle.addEventListener('blur', handle, true);
+		this.toggle.addEventListener('blur-sm', handle, true);
 	}
 
 	private buildFloatingUI() {
@@ -239,7 +239,7 @@ class HSTooltip extends HSBasePlugin<{}> implements ITooltip {
 			);
 		}
 		this.toggle.removeEventListener('click', this.onToggleHandleListener, true);
-		this.toggle.removeEventListener('blur', this.onToggleHandleListener, true);
+		this.toggle.removeEventListener('blur-sm', this.onToggleHandleListener, true);
 
 		if (this.cleanupAutoUpdate) {
 			this.cleanupAutoUpdate();

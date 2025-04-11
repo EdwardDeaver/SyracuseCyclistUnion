@@ -1,5 +1,4 @@
 @custom-variant hs-tab-active {
-
   &[data-hs-tab].active {
     @slot;
   }

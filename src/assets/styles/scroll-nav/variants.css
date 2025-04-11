@@ -1,12 +1,10 @@
 @custom-variant hs-scroll-nav-active {
-
   &.active {
     @slot;
   }
 }
 
 @custom-variant hs-scroll-nav-disabled {
-
   &.disabled {
     @slot;
   }

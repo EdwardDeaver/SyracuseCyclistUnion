@@ -1,5 +1,4 @@
 @custom-variant hs-carousel-active {
-
   &.active {
     @slot;
   }
@@ -10,7 +9,6 @@
 }
 
 @custom-variant hs-carousel-disabled {
-
   &.disabled {
     @slot;
   }
@@ -21,7 +19,6 @@
 }
 
 @custom-variant hs-carousel-dragging {
-
   &.dragging {
     @slot;
   }

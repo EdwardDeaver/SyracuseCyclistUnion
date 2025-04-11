@@ -182,7 +182,7 @@ class HSStrongPassword
 				this.onTargetFocusListener,
 			);
 			(this.target as HTMLInputElement).addEventListener(
-				'blur',
+				'blur-sm',
 				this.onTargetBlurListener,
 			);
 		}
@@ -368,7 +368,7 @@ class HSStrongPassword
 			this.onTargetFocusListener,
 		);
 		(this.target as HTMLInputElement).removeEventListener(
-			'blur',
+			'blur-sm',
 			this.onTargetBlurListener,
 		);
 		(this.target as HTMLInputElement).removeEventListener(
