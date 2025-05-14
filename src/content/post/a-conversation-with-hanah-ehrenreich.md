@@ -21,9 +21,9 @@ Syracuse bike infrastructure is dangerous, prioritizing driver convenience over 
 
 ### Safety: 
 
-When discussing bike commuting I brought up the 5 way intersection at North Franklin and Butternut Street and how dangerous it is to cross, Ehrenreich responded that when she worked for CNY Works many years ago their offices were in Franklin Square and she biked regularly to work, , “I stopped bike commuting because after I had my oldest because  this isn’t how I wanted to die.”
+When discussing bike commuting I brought up the 5 way intersection at North Franklin and Butternut Street and how dangerous it is to cross, Ehrenreich responded that when she worked for CNY Works many years ago their offices were in Franklin Square and she biked regularly to work, “I stopped bike commuting because after I had my oldest because  this isn’t how I wanted to die.”
 
-When bringing up protected bike lane, she was understanding that they are necessary and voiced dislike for sharrows and painted lanes as not enough protection for bikers.
+When bringing up protected bike lanes, she was understanding that they are necessary and voiced dislike for sharrows and painted lanes as not enough protection for bikers.
 
 Ehrenreich studied in London for her graduate degree and is pro-protected lanes and noted at the difference in culture from drivers there where she saw protected bike lanes as part of the infrastructure and an understanding of cyclists by drivers vs here where the cyclist-driver relationship is angry, dangerous. 
 
@@ -39,7 +39,7 @@ Ehrenreich brought up the idea of ending the practice and replacing one side wit
 #### 3d model of the image
 
 <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.89/build/spline-viewer.js"></script>
-<spline-viewer style="height:80vh;" url="https://prod.spline.design/msjZufBTu8e4O7tD/scene.splinecode"></spline-viewer>
+<spline-viewer style="height:80vh; width:100%;" url="https://prod.spline.design/msjZufBTu8e4O7tD/scene.splinecode"></spline-viewer>
 
 
 ### Greenways: 
