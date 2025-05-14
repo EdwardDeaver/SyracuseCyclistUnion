@@ -79,6 +79,9 @@ import { UI } from 'astrowind:config';
 
       let href;
       switch (network) {
+        case 'bluesky':
+          href = `https://bsky.app/intent/compose?text=Syracuse%20Cyclist%20Union%20${url}`;
+          break;
         case 'facebook':
           href = `https://www.facebook.com/sharer.php?u=${url}`;
           break;

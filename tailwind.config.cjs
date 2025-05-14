@@ -1,4 +1,3 @@
-import defaultTheme from 'tailwindcss/defaultTheme';
 import typographyPlugin from '@tailwindcss/typography';
 
 module.exports = {
@@ -13,9 +12,9 @@ module.exports = {
         muted: 'var(--aw-color-text-muted)',
       },
       fontFamily: {
-        sans: ['var(--aw-font-sans, ui-sans-serif)', ...defaultTheme.fontFamily.sans],
-        serif: ['var(--aw-font-serif, ui-serif)', ...defaultTheme.fontFamily.serif],
-        heading: ['var(--aw-font-heading, ui-sans-serif)', ...defaultTheme.fontFamily.sans],
+        sans: ['var(--aw-font-sans, ui-sans-serif)'],
+        serif: ['var(--aw-font-serif, ui-serif)'],
+        heading: ['var(--aw-font-heading, ui-sans-serif)'],
       },
     },
   },

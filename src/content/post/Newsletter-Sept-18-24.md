@@ -2,7 +2,7 @@
 publishDate: 2024-09-18T23:30:00Z
 title:  City of Syracuse Vision Zero Meeting 
 excerpt: City of Syracuse Vision Zero Meeting + Poster + other updates (data and Veo scooters)
-image: "~/assets/images/screenshot_of_vision_zero.png"
+image: "/images/screenshot_of_vision_zero.png"
 category: Newsletter
 tags:
   - Hello

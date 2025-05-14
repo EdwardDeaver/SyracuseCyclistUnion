@@ -24,10 +24,11 @@
   "dependencies": {
     "@astrojs/rss": "^4.0.7",
     "@astrojs/sitemap": "^3.1.6",
+    "@astrojs/tailwind": "^6.0.2",
     "@astrolib/analytics": "^0.5.0",
     "@astrolib/seo": "^1.0.0-beta.5",
     "@fontsource-variable/inter": "^5.0.20",
-    "@tailwindcss/vite": "^4.0.15",
+    "@tailwindcss/vite": "^4.1.4",
     "ag-grid-community": "^33.1.1",
     "astro": "^4.15.2",
     "astro-embed": "^0.7.2",
@@ -44,11 +45,10 @@
     "@astrojs/check": "^0.9.3",
     "@astrojs/mdx": "^3.1.5",
     "@astrojs/partytown": "^2.1.2",
-    "@astrojs/tailwind": "5.1.0",
     "@eslint/js": "^9.9.1",
     "@iconify-json/flat-color-icons": "^1.2.0",
     "@iconify-json/tabler": "^1.2.0",
-    "@tailwindcss/typography": "^0.5.15",
+    "@tailwindcss/typography": "^0.5.16",
     "@types/eslint__js": "^8.42.3",
     "@types/js-yaml": "^4.0.9",
     "@types/lodash.merge": "^4.6.9",
@@ -73,6 +73,6 @@
     "unist-util-visit": "^5.0.0"
   },
   "optionalDependencies": {
-  "@rollup/rollup-linux-x64-gnu": "*"
-}
+    "@rollup/rollup-linux-x64-gnu": "*"
+  }
 }
